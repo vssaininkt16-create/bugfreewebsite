@@ -243,7 +243,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <Label htmlFor="logo" className="text-gray-300 mb-2 block">Upload Logo (Optional)</Label>
+                  <Label htmlFor="logo" className="text-gray-300 mb-2 block">Upload  (Optional)</Label>
                   <div className="border-2 border-dashed border-cyber-green/30 rounded-lg p-6 text-center hover:border-cyber-green/50 transition-colors">
                     <input
                       id="logo"
