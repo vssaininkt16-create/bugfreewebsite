@@ -12,7 +12,7 @@ import ServiceCard from '@/components/ServiceCard'
 export default function Home() {
   const [text, setText] = useState('')
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const fullText = "Building India's Next-Generation Cybersecurity Force"
+  const fullText = "Security Through Testing and Experience"
   const heroRef = useRef(null)
 
   useEffect(() => {
@@ -92,11 +92,27 @@ export default function Home() {
     <div className='min-h-screen bg-cyber-darker text-white overflow-hidden'>
       <Navbar />
 
-      {/* Hero Section with 3D Parallax */}
+      {/* Hero Section with Video Background */}
       <section 
         ref={heroRef}
         className='relative min-h-screen flex items-center justify-center overflow-hidden perspective-container'
       >
+        {/* Background Video */}
+        <div className='absolute inset-0 w-full h-full overflow-hidden'>
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className='absolute inset-0 w-full h-full object-cover opacity-30'
+            style={{ filter: 'grayscale(20%)' }}
+          >
+            <source src=\"https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-the-world-4119-large.mp4\" type=\"video/mp4\" />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black'></div>
+        </div>
+        
         <CyberBackground />
         
         {/* Parallax layers */}
@@ -112,12 +128,11 @@ export default function Home() {
 
         <div className='container mx-auto px-4 relative z-10 pt-32 pb-20'>
           <div className='max-w-5xl mx-auto text-center'>
-            {/* Terminal Badge */}
+            {/* Professional Badge */}
             <div className='mb-8 inline-block animate-fade-in-up'>
               <div className='inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-full border border-cyber-green/20'>
-                <Terminal className='w-4 h-4 text-cyber-green' />
-                <span className='terminal-text text-sm'>$ sudo access_granted</span>
-                <Sparkles className='w-4 h-4 text-cyber-cyan animate-pulse' />
+                <Shield className='w-4 h-4 text-cyber-green' />
+                <span className='text-cyber-green text-sm font-semibold uppercase tracking-wider'>Professional Security Services</span>
               </div>
             </div>
             
@@ -141,8 +156,7 @@ export default function Home() {
                 animationDelay: '0.4s'
               }}
             >
-              Elite ethical hackers providing world-class penetration testing, 
-              VAPT, and cybersecurity consulting services
+              We identify vulnerabilities before attackers do. Focused on prevention, detection, and response.
             </p>
             
             {/* CTA Buttons with 3D lift */}
@@ -153,16 +167,16 @@ export default function Home() {
               <Link href='/contact'>
                 <Button className='relative group bg-gradient-to-r from-cyber-green to-cyber-cyan text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300'>
                   <span className='relative z-10 flex items-center'>
-                    Get Secured
+                    Request Security Assessment
                     <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform' />
                   </span>
                   <div className='absolute inset-0 bg-gradient-to-r from-cyber-cyan to-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                   <div className='absolute inset-0 neon-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
                 </Button>
               </Link>
-              <Link href='/careers'>
+              <Link href='/services'>
                 <Button variant='outline' className='relative group border-2 border-cyber-green text-cyber-green hover:text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300'>
-                  <span className='relative z-10'>Join Our Team</span>
+                  <span className='relative z-10'>View Services</span>
                   <div className='absolute inset-0 bg-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                 </Button>
               </Link>
@@ -220,10 +234,10 @@ export default function Home() {
         <div className='container mx-auto px-4 relative z-10'>
           <div className='text-center mb-16'>
             <h2 className='text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up'>
-              Our <span className='gradient-text'>Services</span>
+              <span className='gradient-text'>Security Services</span>
             </h2>
             <p className='text-xl text-gray-400 max-w-3xl mx-auto animate-fade-in-up' style={{ animationDelay: '0.2s' }}>
-              Comprehensive cybersecurity solutions to protect your digital assets from evolving threats
+              Comprehensive vulnerability assessment and penetration testing services
             </p>
           </div>
 
@@ -261,18 +275,18 @@ export default function Home() {
             <div className='absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-cyber-cyan/5 group-hover:from-cyber-green/10 group-hover:to-cyber-cyan/10 transition-all duration-500'></div>
             
             <div className='relative z-10'>
-              <Terminal className='w-20 h-20 text-cyber-green mx-auto mb-8 animate-float-slow' />
+              <Shield className='w-20 h-20 text-cyber-green mx-auto mb-8 animate-float-slow' />
               <h2 className='text-4xl md:text-5xl font-bold mb-6'>
-                Ready to <span className='gradient-text'>Secure</span> Your Digital Assets?
+                <span className='gradient-text'>Secure</span> Your Infrastructure
               </h2>
               <p className='text-xl text-gray-400 mb-10 max-w-2xl mx-auto'>
-                Join hundreds of organizations trusting BugZero for their cybersecurity needs
+                Trusted by enterprises for professional security assessment and testing
               </p>
               <div className='flex flex-col sm:flex-row gap-6 justify-center'>
                 <Link href='/contact'>
                   <Button className='relative group bg-gradient-to-r from-cyber-green to-cyber-cyan text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300'>
                     <span className='relative z-10 flex items-center'>
-                      Contact Us Today
+                      Contact Security Team
                       <ArrowRight className='ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform' />
                     </span>
                     <div className='absolute inset-0 bg-gradient-to-r from-cyber-cyan to-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
@@ -280,7 +294,7 @@ export default function Home() {
                 </Link>
                 <Link href='/about'>
                   <Button variant='outline' className='border-2 border-cyber-green text-cyber-green hover:text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 relative group'>
-                    <span className='relative z-10'>Learn More About Us</span>
+                    <span className='relative z-10'>About Our Team</span>
                     <div className='absolute inset-0 bg-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                   </Button>
                 </Link>
