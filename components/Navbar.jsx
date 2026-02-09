@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Shield, Menu, X, Linkedin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -29,24 +28,37 @@ export default function Navbar() {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
       scrolled 
-        ? 'glass-nav shadow-lg shadow-cyber-green/5' 
-        : 'bg-transparent'
+        ? 'glass-nav shadow-lg shadow-cyber-green/10' 
+        : 'bg-black/60 backdrop-blur-md'
     }`}>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-24">
-          {/* Logo - Fixed Size */}
+        <div className="flex justify-between items-center h-28">
+          {/* Logo - Enhanced Size & Visibility */}
           <Link href="/" className="relative group flex items-center">
-            <div className="relative w-[160px] md:w-[180px] h-16 transition-all duration-300 group-hover:scale-105">
-              <Image 
-                src="https://customer-assets.emergentagent.com/job_threat-shield-37/artifacts/bdoiid65_ChatGPT%20Image%20Feb%209%2C%202026%2C%2007_00_46%20PM.png"
-                alt="BugZero Cyber Solutions"
-                fill
-                className="object-contain"
-                priority
-                sizes="(max-width: 768px) 160px, 180px"
-              />
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-cyber-green/0 group-hover:bg-cyber-green/5 blur-xl transition-all duration-500"></div>
+            {/* Logo container with fixed dimensions */}
+            <div className="relative w-[200px] md:w-[240px] h-20 transition-all duration-300">
+              {/* Glow background for visibility */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyber-green/20 to-cyber-cyan/20 blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Dark backdrop for contrast */}
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-lg group-hover:bg-black/20 transition-all duration-300"></div>
+              
+              {/* Logo image */}
+              <div className="relative w-full h-full p-2">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_threat-shield-37/artifacts/bdoiid65_ChatGPT%20Image%20Feb%209%2C%202026%2C%2007_00_46%20PM.png"
+                  alt="BugZero Cyber Solutions"
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.4))'
+                  }}
+                />
+              </div>
+              
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
+                   style={{ boxShadow: '0 0 40px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 136, 0.1)' }}>
+              </div>
             </div>
           </Link>
 
@@ -59,10 +71,7 @@ export default function Navbar() {
                 className="relative text-gray-300 hover:text-cyber-green transition-all duration-300 font-medium text-sm uppercase tracking-wider group"
               >
                 {link.name}
-                {/* Underline effect */}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyber-green to-cyber-cyan transition-all duration-300 group-hover:w-full"></span>
-                {/* Glow effect */}
-                <span className="absolute inset-0 bg-cyber-green/0 group-hover:bg-cyber-green/10 blur-xl transition-all duration-500"></span>
               </Link>
             ))}
             
@@ -77,7 +86,7 @@ export default function Navbar() {
             </Link>
             
             <Button className="relative bg-gradient-to-r from-cyber-green to-cyber-cyan text-black font-bold px-6 py-2 rounded-lg overflow-hidden group hover:shadow-lg hover:shadow-cyber-green/50 transition-all duration-300">
-              <span className="relative z-10">Get Secured</span>
+              <span className="relative z-10">Request Assessment</span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
           </div>
@@ -117,7 +126,7 @@ export default function Navbar() {
             </Link>
             <div className="px-4 py-3">
               <Button className="w-full bg-gradient-to-r from-cyber-green to-cyber-cyan text-black font-bold rounded-lg hover:shadow-lg hover:shadow-cyber-green/50 transition-all duration-300">
-                Get Secured
+                Request Assessment
               </Button>
             </div>
           </div>
