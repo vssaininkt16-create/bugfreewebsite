@@ -12,7 +12,7 @@ import ServiceCard from '@/components/ServiceCard'
 export default function Home() {
   const [text, setText] = useState('')
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const fullText = 'Building India\'s Next-Generation Cybersecurity Force'
+  const fullText = "Building India's Next-Generation Cybersecurity Force"
   const heroRef = useRef(null)
 
   useEffect(() => {
