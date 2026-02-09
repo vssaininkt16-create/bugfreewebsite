@@ -26,8 +26,8 @@ export default function Footer() {
               <div className="absolute inset-0 bg-cyber-green/0 group-hover:bg-cyber-green/5 blur-xl transition-all duration-500"></div>
             </div>
             <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Building India's next-generation cybersecurity force. Elite ethical hackers providing 
-              world-class penetration testing and security consulting services.
+              Professional security testing and vulnerability assessment services. 
+              Trusted by enterprises for comprehensive penetration testing and security consulting.
             </p>
             <div className="flex space-x-4">
               <Link 
