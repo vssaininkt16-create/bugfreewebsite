@@ -33,34 +33,27 @@ export default function Navbar() {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-28">
-          {/* Logo - Enhanced Size & Visibility */}
-          <Link href="/" className="relative group flex items-center">
+          {/* Logo - Non-Clickable Branding (Shopify-Style) */}
+          <div className="relative flex items-center cursor-default">
             {/* Logo container with fixed dimensions */}
-            <div className="relative w-[200px] md:w-[240px] h-20 transition-all duration-300">
-              {/* Glow background for visibility */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyber-green/20 to-cyber-cyan/20 blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Dark backdrop for contrast */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-lg group-hover:bg-black/20 transition-all duration-300"></div>
+            <div className="relative w-[180px] md:w-[200px] h-16">
+              {/* Subtle backdrop for contrast */}
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-xs rounded-lg"></div>
               
               {/* Logo image */}
               <div className="relative w-full h-full p-2">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_threat-shield-37/artifacts/bdoiid65_ChatGPT%20Image%20Feb%209%2C%202026%2C%2007_00_46%20PM.png"
                   alt="BugZero Cyber Solutions"
-                  className="w-full h-full object-contain drop-shadow-2xl"
+                  className="w-full h-full object-contain"
                   style={{
-                    filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.4))'
+                    filter: 'drop-shadow(0 2px 8px rgba(0, 255, 136, 0.15))',
+                    pointerEvents: 'none'
                   }}
                 />
               </div>
-              
-              {/* Hover glow effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
-                   style={{ boxShadow: '0 0 40px rgba(0, 255, 136, 0.3), inset 0 0 20px rgba(0, 255, 136, 0.1)' }}>
-              </div>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
