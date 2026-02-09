@@ -107,7 +107,7 @@ export default function Home() {
             className='absolute inset-0 w-full h-full object-cover opacity-30'
             style={{ filter: 'grayscale(20%)' }}
           >
-            <source src=\"https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-the-world-4119-large.mp4\" type=\"video/mp4\" />
+            <source src='https://assets.mixkit.co/videos/preview/mixkit-digital-network-of-the-world-4119-large.mp4' type='video/mp4' />
           </video>
           {/* Dark overlay for text readability */}
           <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black'></div>
