@@ -138,7 +138,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">LinkedIn</h3>
                     <a 
-                      href="https://www.linkedin.com/in/vishal-saini-b32782321/" 
+                      href="https://www.linkedin.com/company/bugzero-cyber-solutions/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-cyber-cyan transition-colors"
