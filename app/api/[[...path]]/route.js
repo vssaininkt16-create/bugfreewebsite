@@ -8,14 +8,27 @@ const DB_NAME = process.env.DB_NAME || 'bugzero_db'
 let cachedClient = null
 
 async function connectToDatabase() {
+  if (!MONGO_URL) {
+    throw new Error('MONGO_URL environment variable is not defined. Please set it in your production environment.')
+  }
+
   if (cachedClient) {
     return cachedClient
   }
 
-  const client = new MongoClient(MONGO_URL)
-  await client.connect()
-  cachedClient = client
-  return client
+  try {
+    const client = new MongoClient(MONGO_URL, {
+      maxPoolSize: 10,
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+    })
+    await client.connect()
+    cachedClient = client
+    return client
+  } catch (error) {
+    console.error('Failed to connect to MongoDB:', error.message)
+    throw new Error('Database connection failed. Please check your MONGO_URL and MongoDB Atlas configuration.')
+  }
 }
 
 // GET handler - API info
