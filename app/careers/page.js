@@ -194,7 +194,7 @@ export default function Careers() {
                       ))}
                     </div>
                   </div>
-                  <Link href="/contact">
+                  <Link href={position.title === 'Cybersecurity Intern' ? '/apply' : '/contact'}>
                     <Button className="bg-cyber-green text-black hover:bg-cyber-cyan hover:text-black font-bold">
                       Apply Now
                     </Button>
