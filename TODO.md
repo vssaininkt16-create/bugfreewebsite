@@ -5,11 +5,11 @@
 - Likely causes connection failures on live where only one env var is set
 
 ## Minimal Safe Fixes
-- [x] Standardize all MongoDB connections to use MONGODB_URI
-- [x] Update app/api/test-mongo/route.js
-- [x] Update app/api/[[...path]]/route.js
-- [x] Update error messages to reference MONGODB_URI
-- [x] Test connections locally (dev server started, changes applied)
+- [ ] Standardize all MongoDB connections to use MONGODB_URI
+- [ ] Update app/api/test-mongo/route.js
+- [ ] Update app/api/[[...path]]/route.js
+- [ ] Update error messages to reference MONGODB_URI
+- [ ] Test connections locally
 
 ## Rollback Plan
 - If issues arise, revert changes by changing MONGODB_URI back to MONGO_URL in the modified files

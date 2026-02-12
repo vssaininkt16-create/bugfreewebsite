@@ -127,8 +127,8 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-cyber-green mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:contact@bugzero.com" className="text-gray-400 hover:text-cyber-green transition-colors">
-                      contact@bugzero.com
+                    <a href="mailto:vishal.saini@bugzero.solutions" className="text-gray-400 hover:text-cyber-green transition-colors">
+                      vishal.saini@bugzero.solutions
                     </a>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="bg-black/50 border-cyber-green/30 focus:border-cyber-green text-white"
-                    placeholder="your@email.com"
+                    placeholder="vishal.saini@bugzero.solutions"
                   />
                 </div>
 

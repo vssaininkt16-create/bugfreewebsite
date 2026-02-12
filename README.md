@@ -208,7 +208,7 @@ Upload company logo (multipart/form-data).
 ## 🔗 Social Links
 
 - **LinkedIn**: [Connect with us](https://www.linkedin.com/in/vishal-saini-b32782321/)
-- **Email**: contact@bugzero.com
+- **Email**: vishal.saini@bugzero.solutions
 
 ## 📱 Responsive Breakpoints
 

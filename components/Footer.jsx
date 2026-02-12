@@ -40,7 +40,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-cyber-cyan/0 group-hover:bg-cyber-cyan/10 blur-xl transition-all duration-500 rounded-lg"></div>
               </Link>
               <Link 
-                href="mailto:contact@bugzero.com" 
+                href="mailto:vishal.saini@bugzero.solutions" 
                 className="relative group p-3 glass-card rounded-lg hover-lift"
               >
                 <Mail className="w-5 h-5 text-gray-400 group-hover:text-cyber-green transition-colors duration-300" />

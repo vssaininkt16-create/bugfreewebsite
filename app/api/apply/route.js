@@ -1,3 +1,5 @@
+import connectToDatabase from '../../../lib/mongodb';
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -30,14 +32,15 @@ export async function POST(request) {
       );
     }
 
-    // Here you would typically save to a database
-    // For now, we'll just log the application
-    console.log('New internship application:', {
+    // Save to database
+    const db = await connectToDatabase();
+    const application = {
       fullName,
       email,
       domain,
       submittedAt: new Date().toISOString()
-    });
+    };
+    await db.collection('applications').insertOne(application);
 
     // Return success response
     return Response.json({
