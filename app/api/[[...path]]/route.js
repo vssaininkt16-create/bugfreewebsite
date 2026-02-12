@@ -2,14 +2,14 @@ import { NextResponse } from 'next/server'
 import { MongoClient } from 'mongodb'
 import { v4 as uuidv4 } from 'uuid'
 
-const MONGO_URL = process.env.MONGO_URL
+const MONGODB_URI = process.env.MONGODB_URI
 const DB_NAME = process.env.DB_NAME || 'bugzero_db'
 
 let cachedClient = null
 
 async function connectToDatabase() {
-  if (!MONGO_URL) {
-    throw new Error('MONGO_URL environment variable is not defined. Please set it in your production environment.')
+  if (!MONGODB_URI) {
+    throw new Error('MONGODB_URI environment variable is not defined. Please set it in your production environment.')
   }
 
   if (cachedClient) {
@@ -17,7 +17,7 @@ async function connectToDatabase() {
   }
 
   try {
-    const client = new MongoClient(MONGO_URL, {
+    const client = new MongoClient(MONGODB_URI, {
       maxPoolSize: 10,
       serverSelectionTimeoutMS: 5000,
       socketTimeoutMS: 45000,
@@ -27,7 +27,7 @@ async function connectToDatabase() {
     return client
   } catch (error) {
     console.error('Failed to connect to MongoDB:', error.message)
-    throw new Error('Database connection failed. Please check your MONGO_URL and MongoDB Atlas configuration.')
+    throw new Error('Database connection failed. Please check your MONGODB_URI and MongoDB Atlas configuration.')
   }
 }
 
