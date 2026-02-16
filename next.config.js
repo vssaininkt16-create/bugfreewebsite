@@ -6,6 +6,7 @@ const nextConfig = {
   serverExternalPackages: ['mongodb'],
   experimental: {
   },
+  turbopack: {},
   webpack(config, { dev }) {
     if (dev) {
       // Reduce CPU/memory from file watching

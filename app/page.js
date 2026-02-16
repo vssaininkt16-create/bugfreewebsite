@@ -293,7 +293,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href='/about'>
-                  <Button variant='outline' className='border-2 border-cyber-green text-cyber-green hover:text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 relative group'>
+                  <Button variant='outline' className='border-2 border-cyber-green text-cyber-#6CF23A hover:text-black font-bold text-lg px-10 py-7 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 relative group'>
                     <span className='relative z-10'>About Our Team</span>
                     <div className='absolute inset-0 bg-cyber-green opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                   </Button>

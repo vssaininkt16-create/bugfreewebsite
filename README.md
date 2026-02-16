@@ -64,7 +64,7 @@ A modern, high-end cybersecurity company website built with Next.js 14, featurin
 ```env
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=bugzero_db
-NEXT_PUBLIC_BASE_URL=https://your-domain.com
+NEXT_PUBLIC_BASE_URL=https://www.bugzero.solutionenpm 
 CORS_ORIGINS=*
 ```
 
