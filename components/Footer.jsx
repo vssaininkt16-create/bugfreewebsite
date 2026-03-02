@@ -15,7 +15,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="relative w-[200px] h-20 mb-6 group">
+            <div className="relative w-[260px] md:w-[400px] h-[120px] md:h-[80px] mb-12">
+
               <Image 
                 src="https://customer-assets.emergentagent.com/job_threat-shield-37/artifacts/bdoiid65_ChatGPT%20Image%20Feb%209%2C%202026%2C%2007_00_46%20PM.png"
                 alt="BugZero Cyber Solutions"

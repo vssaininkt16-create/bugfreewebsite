@@ -62,9 +62,9 @@ A modern, high-end cybersecurity company website built with Next.js 14, featurin
 ## 🔧 Environment Variables
 
 ```env
-MONGO_URL=mongodb://localhost:27017
+MONGODB_URI=mongodb://localhost:27017
 DB_NAME=bugzero_db
-NEXT_PUBLIC_BASE_URL=https://www.bugzero.solutionenpm 
+NEXT_PUBLIC_BASE_URL=https://www.bugzero.solutionenpm
 CORS_ORIGINS=*
 ```
 
@@ -266,7 +266,7 @@ This is a private company website. For inquiries, please contact us through the 
 ## 📞 Support
 
 For support or inquiries:
-- Email: contact@bugzero.com
+- Email: vishal.saini@bugzero.com
 - LinkedIn: [Vishal Saini](https://www.linkedin.com/in/vishal-saini-b32782321/)
 - 24/7 Emergency Response Available
 

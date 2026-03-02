@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+7#!/usr/bin/env python3
 """
 MongoDB Database Verification Script
 Checks if data was properly saved to MongoDB collections
@@ -10,7 +10,7 @@ import json
 from datetime import datetime
 
 # MongoDB connection details
-MONGO_URL = os.getenv('MONGO_URL', 'mongodb://localhost:27017')
+MONGO_URL = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DB_NAME = os.getenv('DB_NAME', 'bugzero_db')
 
 def verify_database():
