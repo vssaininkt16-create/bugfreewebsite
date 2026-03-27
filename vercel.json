@@ -17,5 +17,11 @@
       "NEXT_PUBLIC_BASE_URL": "https://$VERCEL_URL",
       "NEXT_PUBLIC_APP_URL": "https://$VERCEL_URL"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
 }
