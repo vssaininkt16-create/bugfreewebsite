@@ -1,16 +1,13 @@
-# Database Fix TODO
+# Production Fixes TODO
 
-## Root Cause Analysis
-- Inconsistent MongoDB environment variables: MONGODB_URI (used by lib/mongodb.js and test-db) vs MONGO_URL (used by test-mongo and catch-all API)
-- Likely causes connection failures on live where only one env var is set
+## TODO List:
 
-## Minimal Safe Fixes
-- [ ] Standardize all MongoDB connections to use MONGODB_URI
-- [ ] Update app/api/test-mongo/route.js
-- [ ] Update app/api/[[...path]]/route.js
-- [ ] Update error messages to reference MONGODB_URI
-- [ ] Test connections locally
+- [ ] 1. Fix next.config.js CORS - Add Access-Control-Allow-Origin header dynamically
+- [ ] 2. Update lib/mongodb.js - Unified Mongoose connection with detailed logging
+- [ ] 3. Fix app/api/[[...path]]/route.js - Use unified DB connection, better error handling
+- [ ] 4. Create .env.production.example - Show required environment variables
+- [ ] 5. Test the fixes locally
 
-## Rollback Plan
-- If issues arise, revert changes by changing MONGODB_URI back to MONGO_URL in the modified files
-- Ensure production env vars are set correctly for MONGODB_URI
+## Completed:
+- [x] Analyzed the codebase and identified issues
+- [x] Created plan with user approval

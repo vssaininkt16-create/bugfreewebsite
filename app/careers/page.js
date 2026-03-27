@@ -63,13 +63,13 @@ export default function Careers() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <CyberBackground />
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1548092372-0d1bd40894a3)',
@@ -77,13 +77,13 @@ export default function Careers() {
             backgroundPosition: 'center'
           }}
         ></div>
-        
+
         <div className="container mx-auto px-4 relative z-10 pt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Join the <span className="text-cyber-green">Elite</span>
+              Join the <span className="text-primary">Elite</span>
             </h1>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Start your cybersecurity career with India's premier ethical hacking team
             </p>
             <div className="terminal-text text-lg">
@@ -97,38 +97,38 @@ export default function Careers() {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="glass p-8 md:p-12 rounded-lg mb-12">
+            <div className="glass-card p-8 md:p-12 rounded-lg mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Cybersecurity <span className="text-cyber-green">Internship Program</span>
+                Cybersecurity <span className="text-primary">Internship Program</span>
               </h2>
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                Are you passionate about cybersecurity and eager to learn from the best? Our internship 
-                program offers fresh graduates and security enthusiasts a unique opportunity to train 
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Are you passionate about cybersecurity and eager to learn from the best? Our internship
+                program offers fresh graduates and security enthusiasts a unique opportunity to train
                 under elite ethical hackers.
               </p>
-              <div className="space-y-4 text-gray-300">
+              <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-start space-x-3">
-                  <span className="text-cyber-green text-xl mt-1">▸</span>
+                  <span className="text-primary text-xl mt-1">▸</span>
                   <div>
-                    <strong className="text-white">Duration:</strong> 3-6 months intensive training
+                    <strong className="text-foreground">Duration:</strong> 3-6 months intensive training
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="text-cyber-green text-xl mt-1">▸</span>
+                  <span className="text-primary text-xl mt-1">▸</span>
                   <div>
-                    <strong className="text-white">Training:</strong> Hands-on penetration testing, VAPT, bug bounty hunting
+                    <strong className="text-foreground">Training:</strong> Hands-on penetration testing, VAPT, bug bounty hunting
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="text-cyber-green text-xl mt-1">▸</span>
+                  <span className="text-primary text-xl mt-1">▸</span>
                   <div>
-                    <strong className="text-white">Certification:</strong> Industry-recognized certificate upon completion
+                    <strong className="text-foreground">Certification:</strong> Industry-recognized certificate upon completion
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="text-cyber-green text-xl mt-1">▸</span>
+                  <span className="text-primary text-xl mt-1">▸</span>
                   <div>
-                    <strong className="text-white">Job Opportunity:</strong> Top performers are offered full-time positions
+                    <strong className="text-foreground">Job Opportunity:</strong> Top performers are offered full-time positions
                   </div>
                 </div>
               </div>
@@ -143,21 +143,21 @@ export default function Careers() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why <span className="text-cyber-cyan">BugZero</span>?
+              Why <span className="text-secondary">BugZero</span>?
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               What makes our program the best place to start your cybersecurity career
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="glass p-6 rounded-lg hover-glow">
-                <div className="p-3 bg-cyber-green/10 rounded-lg inline-block mb-4">
-                  <benefit.icon className="w-8 h-8 text-cyber-green" />
+              <div key={index} className="glass-card p-6 rounded-lg hover-lift">
+                <div className="p-3 bg-primary/10 rounded-lg inline-block mb-4">
+                  <benefit.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.description}</p>
+                <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -169,33 +169,33 @@ export default function Careers() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-              Open <span className="text-cyber-green">Positions</span>
+              Open <span className="text-primary">Positions</span>
             </h2>
 
             <div className="space-y-6">
               {positions.map((position, index) => (
-                <div key={index} className="glass p-8 rounded-lg hover-glow">
+                <div key={index} className="glass-card p-8 rounded-lg hover-lift">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold mb-2">{position.title}</h3>
-                      <span className="inline-block px-3 py-1 bg-cyber-green/20 text-cyber-green rounded-full text-sm">
+                      <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
                         {position.type}
                       </span>
                     </div>
                   </div>
-                  <p className="text-gray-300 mb-4">{position.description}</p>
+                  <p className="text-muted-foreground mb-4">{position.description}</p>
                   <div className="mb-4">
-                    <h4 className="text-white font-semibold mb-2">Required Skills:</h4>
+                    <h4 className="text-foreground font-semibold mb-2">Required Skills:</h4>
                     <div className="flex flex-wrap gap-2">
                       {position.skills.map((skill, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-black/50 border border-cyber-green/30 rounded text-sm text-gray-300">
+                        <span key={idx} className="px-3 py-1 bg-card border border-primary/30 rounded text-sm text-muted-foreground">
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
                   <Link href={position.title === 'Cybersecurity Intern' ? '/apply' : '/contact'}>
-                    <Button className="bg-cyber-green text-black hover:bg-cyber-cyan hover:text-black font-bold">
+                    <Button className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold">
                       Apply Now
                     </Button>
                   </Link>
@@ -210,15 +210,15 @@ export default function Careers() {
       <section className="py-20 relative">
         <CyberBackground />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="glass p-12 rounded-lg text-center max-w-4xl mx-auto cyber-glow">
+          <div className="glass-card p-12 rounded-lg text-center max-w-4xl mx-auto neon-glow">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to <span className="text-cyber-green">Start</span> Your Journey?
+              Ready to <span className="text-primary">Start</span> Your Journey?
             </h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Join the next generation of elite ethical hackers
             </p>
             <Link href="/contact">
-              <Button className="bg-cyber-green text-black hover:bg-cyber-cyan hover:text-black font-bold text-lg px-8 py-6">
+              <Button className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg px-8 py-6">
                 Apply Today
               </Button>
             </Link>

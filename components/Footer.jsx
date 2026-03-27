@@ -1,58 +1,52 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { Linkedin, Mail, Shield, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="relative bg-cyber-darker border-t border-cyber-green/10 pt-16 pb-8 overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 cyber-grid opacity-5"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-green/50 to-transparent"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="relative w-[260px] md:w-[400px] h-[120px] md:h-[80px] mb-12">
+    <footer className="relative bg-background border-t border-border/50 overflow-hidden">
+      <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
 
-              <Image 
-                src="https://customer-assets.emergentagent.com/job_threat-shield-37/artifacts/bdoiid65_ChatGPT%20Image%20Feb%209%2C%202026%2C%2007_00_46%20PM.png"
-                alt="BugZero Cyber Solutions"
-                fill
-                className="object-contain"
-                sizes="200px"
-              />
-              <div className="absolute inset-0 bg-cyber-green/0 group-hover:bg-cyber-green/5 blur-xl transition-all duration-500"></div>
-            </div>
-            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Professional security testing and vulnerability assessment services. 
-              Trusted by enterprises for comprehensive penetration testing and security consulting.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Footer */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/20">
+                <Shield className="w-4 h-4 text-primary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-base font-bold tracking-tight text-foreground leading-tight">BugZero</span>
+                <span className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground leading-tight">Cyber Solutions</span>
+              </div>
+            </Link>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
+              Enterprise-grade cybersecurity services. Trusted by organizations worldwide for vulnerability assessment, penetration testing, and security consulting.
             </p>
-            <div className="flex space-x-4">
-              <Link 
-                href="https://www.linkedin.com/company/bugzero-cyber-solutions/" 
-                target="_blank" 
+            <div className="flex gap-3">
+              <Link
+                href="https://www.linkedin.com/company/bugzero-cyber-solutions/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="relative group p-3 glass-card rounded-lg hover-lift"
+                className="flex items-center justify-center w-9 h-9 rounded-lg border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
               >
-                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-cyber-cyan transition-colors duration-300" />
-                <div className="absolute inset-0 bg-cyber-cyan/0 group-hover:bg-cyber-cyan/10 blur-xl transition-all duration-500 rounded-lg"></div>
+                <Linkedin className="w-4 h-4" />
               </Link>
-              <Link 
-                href="mailto:vishal.saini@bugzero.solutions" 
-                className="relative group p-3 glass-card rounded-lg hover-lift"
+              <Link
+                href="mailto:vishal.saini@bugzero.solutions"
+                className="flex items-center justify-center w-9 h-9 rounded-lg border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
               >
-                <Mail className="w-5 h-5 text-gray-400 group-hover:text-cyber-green transition-colors duration-300" />
-                <div className="absolute inset-0 bg-cyber-green/0 group-hover:bg-cyber-green/10 blur-xl transition-all duration-500 rounded-lg"></div>
+                <Mail className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-cyber-green font-bold mb-6 text-lg uppercase tracking-wider">Quick Links</h3>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-5">Company</h4>
             <ul className="space-y-3">
               {[
                 { name: 'Home', href: '/' },
@@ -62,14 +56,11 @@ export default function Footer() {
                 { name: 'Contact', href: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 relative group inline-block"
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    <span className="relative">
-                      {link.name}
-                      <span className="absolute bottom-0 left-0 w-0 h-px bg-cyber-green transition-all duration-300 group-hover:w-full"></span>
-                    </span>
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -78,7 +69,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-cyber-green font-bold mb-6 text-lg uppercase tracking-wider">Services</h3>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-5">Services</h4>
             <ul className="space-y-3">
               {[
                 'VAPT Testing',
@@ -88,41 +79,59 @@ export default function Footer() {
                 'Bug Bounty',
                 'Security Consulting'
               ].map((service) => (
-                <li key={service} className="text-gray-400 text-sm">
-                  <span className="inline-flex items-center space-x-2 group cursor-default">
-                    <span className="text-cyber-green text-xs group-hover:scale-125 transition-transform duration-300">▸</span>
-                    <span className="group-hover:text-cyber-green transition-colors duration-300">{service}</span>
+                <li key={service}>
+                  <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-default">
+                    {service}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-5">Contact</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-muted-foreground">vishal.saini@bugzero.solutions</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-muted-foreground">India</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-muted-foreground">24/7 Security Response</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-cyber-green/10 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} BugZero Cyber Solutions. All rights reserved.
+        <div className="border-t border-border/50 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-xs">
+            &copy; {new Date().getFullYear()} BugZero Cyber Solutions. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-sm">
-            <Link href="#" className="text-gray-500 hover:text-cyber-green transition-colors duration-300 relative group">
+          <div className="flex items-center gap-6 text-xs">
+            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-cyber-green transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-gray-500 hover:text-cyber-green transition-colors duration-300 relative group">
+            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Terms of Service
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-cyber-green transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-gray-500 hover:text-cyber-green transition-colors duration-300 relative group">
+            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Security
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-cyber-green transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
         </div>
       </div>
-
-      {/* Bottom glow */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-cyber-green/50 to-transparent"></div>
     </footer>
   )
 }

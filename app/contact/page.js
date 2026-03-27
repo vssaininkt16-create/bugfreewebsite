@@ -90,7 +90,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* Hero Section */}
@@ -99,9 +99,9 @@ export default function Contact() {
         <div className="container mx-auto px-4 relative z-10 pt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Get In <span className="text-cyber-green">Touch</span>
+              Get In <span className="text-primary">Touch</span>
             </h1>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-muted-foreground">
               Let's discuss how we can secure your digital assets
             </p>
           </div>
@@ -115,71 +115,70 @@ export default function Contact() {
             {/* Contact Info */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Contact <span className="text-cyber-cyan">Information</span>
+                Contact <span className="text-secondary">Information</span>
               </h2>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                Have questions about our services or want to discuss a security project? 
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                Have questions about our services or want to discuss a security project?
                 Our team is here to help. Reach out through any of the channels below.
               </p>
 
               <div className="space-y-6">
-                <div className="glass p-4 rounded-lg flex items-start space-x-4 hover-glow">
-                  <Mail className="w-6 h-6 text-cyber-green mt-1" />
+                <div className="glass-card p-4 rounded-lg flex items-start space-x-4 hover-lift">
+                  <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:vishal.saini@bugzero.solutions" className="text-gray-400 hover:text-cyber-green transition-colors">
+                    <a href="mailto:vishal.saini@bugzero.solutions" className="text-muted-foreground hover:text-primary transition-colors">
                       vishal.saini@bugzero.solutions
                     </a>
                   </div>
                 </div>
 
-                <div className="glass p-4 rounded-lg flex items-start space-x-4 hover-glow">
-                  <Linkedin className="w-6 h-6 text-cyber-cyan mt-1" />
+                <div className="glass-card p-4 rounded-lg flex items-start space-x-4 hover-lift">
+                  <Linkedin className="w-6 h-6 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">LinkedIn</h3>
-                    <a 
-                      href="https://www.linkedin.com/company/bugzero-cyber-solutions/" 
-                      target="_blank" 
+                    <a
+                      href="https://www.linkedin.com/company/bugzero-cyber-solutions/"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-cyber-cyan transition-colors"
+                      className="text-muted-foreground hover:text-secondary transition-colors"
                     >
                       Connect with us on LinkedIn
                     </a>
                   </div>
                 </div>
 
-                <div className="glass p-4 rounded-lg flex items-start space-x-4 hover-glow">
-                  <MapPin className="w-6 h-6 text-cyber-green mt-1" />
+                <div className="glass-card p-4 rounded-lg flex items-start space-x-4 hover-lift">
+                  <MapPin className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Location</h3>
-                    <p className="text-gray-400">India</p>
+                    <p className="text-muted-foreground">India</p>
                   </div>
                 </div>
 
-                <div className="glass p-4 rounded-lg flex items-start space-x-4 hover-glow">
-                  <Phone className="w-6 h-6 text-cyber-cyan mt-1" />
+                <div className="glass-card p-4 rounded-lg flex items-start space-x-4 hover-lift">
+                  <Phone className="w-6 h-6 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Support</h3>
-                    <p className="text-gray-400">24/7 Emergency Response Available</p>
+                    <p className="text-muted-foreground">24/7 Emergency Response Available</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="glass p-8 rounded-lg">
+            <div className="glass-card p-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-              
+
               {status.message && (
-                <div className={`mb-6 p-4 rounded-lg flex items-center space-x-2 ${
-                  status.type === 'success' ? 'bg-cyber-green/20 border border-cyber-green/50' : 'bg-red-500/20 border border-red-500/50'
-                }`}>
+                <div className={`mb-6 p-4 rounded-lg flex items-center space-x-2 ${status.type === 'success' ? 'bg-primary/20 border border-primary/50' : 'bg-red-500/20 border border-red-500/50'
+                  }`}>
                   {status.type === 'success' ? (
-                    <CheckCircle className="w-5 h-5 text-cyber-green" />
+                    <CheckCircle className="w-5 h-5 text-primary" />
                   ) : (
                     <AlertCircle className="w-5 h-5 text-red-500" />
                   )}
-                  <span className={status.type === 'success' ? 'text-cyber-green' : 'text-red-400'}>
+                  <span className={status.type === 'success' ? 'text-primary' : 'text-red-400'}>
                     {status.message}
                   </span>
                 </div>
@@ -187,7 +186,7 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="text-gray-300 mb-2 block">Name *</Label>
+                  <Label htmlFor="name" className="text-muted-foreground mb-2 block">Name *</Label>
                   <Input
                     id="name"
                     name="name"
@@ -195,13 +194,13 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="bg-black/50 border-cyber-green/30 focus:border-cyber-green text-white"
+                    className="bg-card border-border focus:border-primary text-foreground"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-gray-300 mb-2 block">Email *</Label>
+                  <Label htmlFor="email" className="text-muted-foreground mb-2 block">Email *</Label>
                   <Input
                     id="email"
                     name="email"
@@ -209,13 +208,13 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="bg-black/50 border-cyber-green/30 focus:border-cyber-green text-white"
+                    className="bg-card border-border focus:border-primary text-foreground"
                     placeholder="vishal.saini@bugzero.solutions"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="subject" className="text-gray-300 mb-2 block">Subject *</Label>
+                  <Label htmlFor="subject" className="text-muted-foreground mb-2 block">Subject *</Label>
                   <Input
                     id="subject"
                     name="subject"
@@ -223,13 +222,13 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="bg-black/50 border-cyber-green/30 focus:border-cyber-green text-white"
+                    className="bg-card border-border focus:border-primary text-foreground"
                     placeholder="How can we help?"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-gray-300 mb-2 block">Message *</Label>
+                  <Label htmlFor="message" className="text-muted-foreground mb-2 block">Message *</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -237,14 +236,14 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="bg-black/50 border-cyber-green/30 focus:border-cyber-green text-white resize-none"
+                    className="bg-card border-border focus:border-primary text-foreground resize-none"
                     placeholder="Tell us about your security needs..."
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="logo" className="text-gray-300 mb-2 block">Upload  (Optional)</Label>
-                  <div className="border-2 border-dashed border-cyber-green/30 rounded-lg p-6 text-center hover:border-cyber-green/50 transition-colors">
+                  <Label htmlFor="logo" className="text-muted-foreground mb-2 block">Upload  (Optional)</Label>
+                  <div className="border-2 border-dashed border-primary/30 rounded-lg p-6 text-center hover:border-primary/50 transition-colors">
                     <input
                       id="logo"
                       type="file"
@@ -256,13 +255,13 @@ export default function Contact() {
                       {logoPreview ? (
                         <div className="space-y-4">
                           <img src={logoPreview} alt="Logo preview" className="max-h-32 mx-auto" />
-                          <p className="text-sm text-cyber-green">Click to change logo</p>
+                          <p className="text-sm text-primary">Click to change logo</p>
                         </div>
                       ) : (
                         <div className="space-y-4">
-                          <Upload className="w-12 h-12 text-cyber-green mx-auto" />
-                          <p className="text-gray-400">Click to upload your company logo</p>
-                          <p className="text-sm text-gray-500">PNG, JPG up to 5MB</p>
+                          <Upload className="w-12 h-12 text-primary mx-auto" />
+                          <p className="text-muted-foreground">Click to upload your company logo</p>
+                          <p className="text-sm text-muted-foreground">PNG, JPG up to 5MB</p>
                         </div>
                       )}
                     </label>
@@ -272,7 +271,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-cyber-green text-black hover:bg-cyber-cyan hover:text-black font-bold text-lg py-6"
+                  className="w-full bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg py-6"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>

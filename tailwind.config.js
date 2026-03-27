@@ -59,6 +59,12 @@ module.exports = {
                                 dark: '#050505',
                                 darker: '#020202',
                                 gray: '#0a0a0a'
+                        },
+                        chat: {
+                                bg: 'hsl(var(--chat-bg))',
+                                border: 'hsl(var(--chat-border))',
+                                user: 'hsl(var(--chat-user))',
+                                bot: 'hsl(var(--chat-bot))'
                         }
                 },
                 borderRadius: {
@@ -120,6 +126,38 @@ module.exports = {
                         'scale-in': {
                                 '0%': { opacity: '0', transform: 'scale(0.9)' },
                                 '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        'dot-bounce': {
+                                '0%, 80%, 100%': { transform: 'translateY(0)' },
+                                '40%': { transform: 'translateY(-4px)' }
+                        },
+                        'scale-up': {
+                                '0%': { opacity: '0', transform: 'scale(0.85)' },
+                                '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        'chat-fade-in': {
+                                '0%': { opacity: '0', transform: 'translateY(6px)' },
+                                '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        'pulse-gold': {
+                                '0%, 100%': { boxShadow: '0 0 0 0 rgba(var(--theme-glow-rgb), 0.4)' },
+                                '50%': { boxShadow: '0 0 0 10px rgba(var(--theme-glow-rgb), 0)' }
+                        },
+                        'pulse-glow': {
+                                '0%, 100%': { opacity: '0.4' },
+                                '50%': { opacity: '0.8' }
+                        },
+                        'slide-up': {
+                                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                                '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        'slide-in-right': {
+                                '0%': { opacity: '0', transform: 'translateX(20px)' },
+                                '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        'counter': {
+                                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                                '100%': { opacity: '1', transform: 'translateY(0)' }
                         }
                 },
                 animation: {
@@ -133,7 +171,15 @@ module.exports = {
                         'scan-line': 'scan-line 8s linear infinite',
                         'tilt': 'tilt 10s ease-in-out infinite',
                         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
-                        'scale-in': 'scale-in 0.5s ease-out forwards'
+                        'scale-in': 'scale-in 0.5s ease-out forwards',
+                        'dot-bounce': 'dot-bounce 1.2s ease-in-out infinite',
+                        'scale-up': 'scale-up 0.25s ease-out forwards',
+                        'fade-in': 'chat-fade-in 0.3s ease-out forwards',
+                        'pulse-gold': 'pulse-gold 2s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.7s ease-out forwards',
+                        'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                        'counter': 'counter 0.5s ease-out forwards'
                 },
                 backdropBlur: {
                         xs: '2px',

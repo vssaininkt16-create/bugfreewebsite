@@ -1,12 +1,60 @@
 import { NextResponse } from 'next/server';
-import connectToDatabase from '../../../lib/mongodb';
+import connectToDatabase, { DB_NAME, NODE_ENV } from '../../../lib/mongodb';
+
+// Logging helper
+function log(level, message, data = {}) {
+  const timestamp = new Date().toISOString();
+  const logMessage = `[${timestamp}] [${level.toUpperCase()}] [api/test-db] ${message}`;
+  
+  if (NODE_ENV === 'production') {
+    if (level === 'error' || level === 'warn') {
+      console.error(logMessage, data);
+    } else if (level === 'info') {
+      console.log(logMessage, data);
+    }
+  } else {
+    console.log(logMessage, data);
+  }
+}
 
 export async function GET() {
+  const startTime = Date.now();
+  
+  log('info', 'Testing database connection', { dbName: DB_NAME, env: NODE_ENV });
+
   try {
-    await connectToDatabase();
-    return NextResponse.json({ success: true, message: 'Database connected successfully' });
+    // Use unified database connection from lib/mongodb.js
+    const mongoose = await connectToDatabase();
+    
+    // Test the connection by pinging
+    await mongoose.connection.db.admin().ping();
+    
+    const connectionTime = Date.now() - startTime;
+    
+    log('info', 'Database connection test successful', { 
+      connectionTime,
+      dbName: DB_NAME
+    });
+
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Database connected successfully',
+      database: DB_NAME,
+      environment: NODE_ENV,
+      connectionTime: `${connectionTime}ms`
+    });
+    
   } catch (error) {
-    console.error('Database connection error:', error);
-    return NextResponse.json({ success: false, error: 'Database connection failed' }, { status: 500 });
+    log('error', 'Database connection test failed', { 
+      error: error.message,
+      code: error.code,
+      connectionTime: Date.now() - startTime
+    });
+
+    return NextResponse.json({ 
+      success: false, 
+      error: 'Database connection failed',
+      hint: error.message || 'Check server logs for more details'
+    }, { status: 500 });
   }
 }

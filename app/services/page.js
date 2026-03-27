@@ -133,13 +133,13 @@ export default function Services() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <CyberBackground />
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: 'url(https://images.pexels.com/photos/6964137/pexels-photo-6964137.jpeg)',
@@ -147,13 +147,13 @@ export default function Services() {
             backgroundPosition: 'center'
           }}
         ></div>
-        
+
         <div className="container mx-auto px-4 relative z-10 pt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-cyber-green">Services</span>
+              Our <span className="text-primary">Services</span>
             </h1>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-muted-foreground">
               Comprehensive cybersecurity solutions to protect your digital assets from evolving threats
             </p>
           </div>
@@ -177,9 +177,9 @@ export default function Services() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our <span className="text-cyber-cyan">Process</span>
+              Our <span className="text-secondary">Process</span>
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-muted-foreground">
               A systematic approach to identifying and eliminating security vulnerabilities
             </p>
           </div>
@@ -191,10 +191,10 @@ export default function Services() {
               { step: '03', title: 'Exploitation', desc: 'Validating vulnerabilities with controlled exploits' },
               { step: '04', title: 'Reporting', desc: 'Detailed findings with remediation guidance' }
             ].map((item, index) => (
-              <div key={index} className="glass p-6 rounded-lg text-center hover-glow">
-                <div className="text-4xl font-bold text-cyber-green mb-3 terminal-text">{item.step}</div>
+              <div key={index} className="glass-card p-6 rounded-lg text-center hover-lift">
+                <div className="text-4xl font-bold text-primary mb-3 terminal-text">{item.step}</div>
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -204,15 +204,15 @@ export default function Services() {
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="glass p-12 rounded-lg text-center max-w-4xl mx-auto cyber-glow">
+          <div className="glass-card p-12 rounded-lg text-center max-w-4xl mx-auto neon-glow">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to <span className="text-cyber-green">Secure</span> Your Systems?
+              Ready to <span className="text-primary">Secure</span> Your Systems?
             </h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Let our elite team of ethical hackers protect your organization
             </p>
             <Link href="/contact">
-              <Button className="bg-cyber-green text-black hover:bg-cyber-cyan hover:text-black font-bold text-lg px-8 py-6">
+              <Button className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground font-bold text-lg px-8 py-6">
                 Get Started Today
               </Button>
             </Link>
