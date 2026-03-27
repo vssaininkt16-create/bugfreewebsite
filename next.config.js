@@ -3,8 +3,6 @@ const nextConfig = {
     unoptimized: true,
   },
   serverExternalPackages: ['mongodb'],
-  experimental: {
-  },
   turbopack: {},
   webpack(config, { dev }) {
     if (dev) {

@@ -66,6 +66,8 @@ const ChatWidget = () => {
     setLoading(true);
 
     try {
+      if (!supabase) throw new Error("Chat service not configured");
+
       const { data, error } = await supabase.functions.invoke("chat", {
         body: { messages: newMessages },
       });
