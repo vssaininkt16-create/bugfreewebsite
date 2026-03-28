@@ -135,4 +135,4 @@ export const batchOperations = async (operations) => {
 };
 
 // Export utilities
-export { where, orderBy, limit, serverTimestamp };
+export { where, orderBy, limit, serverTimestamp, deleteDocument };
